@@ -1,0 +1,11 @@
+<h2>Average Price: {{ average_price }}</h2>
+<h2>Minimum Price: {{ min_price }}</h2>
+<h2>Maximum Price: {{ max_price }}</h2>
+<h2>Total Books: {{ total_books }}</h2>
+
+<h2>Add a Book</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Add Book</button>
+</form>
