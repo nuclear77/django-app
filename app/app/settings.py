@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from .secrets import SECRET_KEY, DBPASSWORD, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g)b8(2mv7sltm!4mm(^7_bw^3%36qlo*r-bknx%%-n5s!&a_b)'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'admindb',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'PASSWORD': DBPASSWORD,
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -133,3 +135,5 @@ STATICFILES_DIR = [
 ]
 
 
+TELEGRAM_BOT_TOKEN = TELEGRAM_BOT_TOKEN
+TELEGRAM_CHAT_ID = TELEGRAM_CHAT_ID

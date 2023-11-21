@@ -6,4 +6,4 @@ class TestAppConfig(AppConfig):
     name = 'test_app'
 
     def ready(self):
-        from . import signals
+        from . import telegram_utils

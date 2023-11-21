@@ -2,6 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import asyncio
+import os
+import sys
+
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) if os.name == 'nt' and sys.version_info >= (3, 8) else None
 
 
 def main():
@@ -20,3 +25,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    # from fake_data import generate_fake_data
+    # generate_fake_data(num_authors=10, num_libraries=5, num_books=50)
